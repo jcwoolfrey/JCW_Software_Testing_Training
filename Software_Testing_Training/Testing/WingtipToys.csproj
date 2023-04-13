@@ -228,7 +228,6 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Account\Web.config" />
     <Content Include="ProductDetails.aspx" />
-    <Content Include="Catalog.zip" />
     <Content Include="Catalog\.DS_Store" />
     <Content Include="Catalog\Images\Thumbs.db" />
     <Content Include="Catalog\Images\Thumbs\Thumbs.db" />
@@ -407,6 +406,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IProductContext.cs" />
+    <Compile Include="Interfaces\IShoppingCartActions.cs" />
     <Compile Include="Logic\ShoppingCartActions.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />

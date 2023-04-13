@@ -3,16 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WingtipToys.Models;
+using WingtipToys.Interfaces;
 
 namespace WingtipToys.Logic
 {
-    public class ShoppingCartActions : IDisposable
+    public class ShoppingCartActions : IShoppingCartActions
     {
         public string ShoppingCartId { get; set; }
 
-        private ProductContext _db = new ProductContext();
+        private IProductContext _db = new ProductContext();
 
         public const string CartSessionKey = "CartId";
+
+        public ShoppingCartActions()
+        {
+            _db = new ProductContext();
+        }
+
+        public ShoppingCartActions(IProductContext db)
+        {
+            _db = db;
+        }
 
         public void AddToCart(int id)
         {

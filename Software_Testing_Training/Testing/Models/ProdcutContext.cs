@@ -1,7 +1,9 @@
 ﻿using System.Data.Entity;
+using WingtipToys.Interfaces;
+
 namespace WingtipToys.Models
 {
-    public class ProductContext : DbContext
+    public class ProductContext : DbContext, IProductContext
     {
         public ProductContext() : base("WingtipToys")
         {
