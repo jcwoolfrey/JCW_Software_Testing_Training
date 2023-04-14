@@ -1,4 +1,4 @@
-These are instructions for how to create unit tests and fix the current failing test. In addition there are steps to add a fourth unit test. After the third unit test feel free to test other things.
+These are instructions for how to create unit tests and fix the current failing test. In addition there are steps to add a fourth unit test.
 
 *Working Unit Test*
 Currently there are three unit tests in the Software_Testing_Training/WingtipToys.Tests two are working and one is failing. To start with we will look at the passing test named ShoppingCartTest_NewItemAddedtoDB.
@@ -15,7 +15,7 @@ In summary, this test creates all of the items it needs and then calls shoppingC
 
 *Failing Test*
 
- Skipping the suspense, the reason the test is failing is because the productId mismatches. So a new item is being added to the cart instead of increase the quantity of the item already in the cart.
+ Skipping the suspense, the reason the test is failing is because the productId mismatches. So a new item is being added to the cart instead of increasing the quantity of the item already in the cart.
 
 This could easily happen if someone writing multiple tests was copying and pasting from other tests to create a new test. This does demonstrate that sometime the test is broken and needs to be fixed. Below is an example of writing a test that exposes an issue with the code and finds a bug.
 
@@ -27,7 +27,7 @@ The goal of the unit test is to check that a cart with a value equal or greater 
 
 The first thing to think about is naming the unit test. It should be something descriptive such as ShoppingCartTest_TotalHasDiscountAppliedOnOrderOver20. It should also have [TestMethod] on the line prior to the title. Much of the test can be copied from the other test.
 
-There is a variable for the unit price changing that to a value greater than $20 and running the test will hopefully cause the fail because the UnitPrice and the Result are two different values. The result will have been reduced by 15%. Change the expected value to DiscountedUnitPrice and add a line above the assertion that is var DiscountedUnitPrice = UnitPrice * .85;
+There is a variable for the UnitPrice. Changing that value to be greater than $20 and running the test will hopefully cause the test to fail because the UnitPrice and the Result are two different values. The result will have been reduced by 15%. Change the expected value to DiscountedUnitPrice and add a line above the assertion that is var DiscountedUnitPrice = UnitPrice * .85;
 
 The test should now pass.
 
