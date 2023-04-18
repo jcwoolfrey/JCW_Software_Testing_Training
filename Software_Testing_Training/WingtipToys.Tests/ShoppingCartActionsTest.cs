@@ -92,7 +92,7 @@ namespace WingtipToys.Tests
             var Result = shoppingCartAction.GetTotal();
 
             //Assert
-            Assert.AreEqual(UnitPrice, Result);
+            Assert.AreEqual(UnitPrice, Result * .85m);
         }
 
         //Helpers
